@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guestbook</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <nav class="navbar">
+        <div class="container">
+          <div class="logo">
+            <a href="index.html">My Portfolio</a>
+          </div>
+          <ul class="nav">
+            <li><a href="team.html">Team</a></li>
+            <li><a href="web.html">Web</a></li>
+            <li><a href="python.html">Python</a></li>
+            <li><a href="guestbook.html" class="nav-guestbook">Guestbook</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="content">
+        <div class="top"></div>
+        <div class="row">
+
+          <!-- 왼쪽 타이틀 -->
+          <div class="left">
+            <div class="c-exp">
+              <div class="c-title">
+                <h1>Guest<br/>book</h1>
+                <div class="name">
+                  <div class="c-h2">
+                    <h2>방문해 주셔서 감사합니다.<br/>방명록을 남겨주세요 :)</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 오른쪽 방명록 -->
+          <div class="right">
+
+            <!-- 댓글 작성 폼 -->
+            <div class="gb-form-wrap">
+              <div class="gb-form-header">
+                <span class="skills-label">LEAVE A MESSAGE</span>
+                <h2>방명록 작성</h2>
+              </div>
+              <div class="gb-form">
+                <div class="gb-form-row">
+                  <input
+                    type="text"
+                    id="gb-name"
+                    class="gb-input"
+                    placeholder="이름"
+                    maxlength="20"
+                  />
+                  <input
+                    type="password"
+                    id="gb-password"
+                    class="gb-input"
+                    placeholder="비밀번호 (삭제 시 필요)"
+                    maxlength="20"
+                  />
+                </div>
+                <textarea
+                  id="gb-message"
+                  class="gb-textarea"
+                  placeholder="메시지를 입력해주세요 (최대 200자)"
+                  maxlength="200"
+                ></textarea>
+                <div class="gb-form-footer">
+                  <span id="gb-char-count" class="gb-char-count">0 / 200</span>
+                  <button id="gb-submit" class="gb-btn-submit">작성하기</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- 댓글 목록 -->
+            <div class="gb-list-wrap">
+              <div class="gb-list-header">
+                <span class="skills-label">ALL MESSAGES</span>
+                <h2>전체 방명록 <span id="gb-count" class="gb-count-badge">0</span></h2>
+              </div>
+              <div id="gb-list" class="gb-list">
+                <!-- JS로 렌더링 -->
+              </div>
+              <div id="gb-empty" class="gb-empty">
+                <p>아직 방명록이 없어요.<br/>첫 번째 메시지를 남겨주세요! 👋</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 삭제 확인 모달 -->
+    <div id="gb-modal" class="gb-modal-overlay" style="display:none;">
+      <div class="gb-modal">
+        <h3>댓글 삭제</h3>
+        <p>비밀번호를 입력하면 댓글이 삭제됩니다.</p>
+        <input type="password" id="gb-modal-pw" class="gb-input" placeholder="비밀번호 입력" />
+        <div class="gb-modal-btns">
+          <button id="gb-modal-cancel" class="gb-btn-cancel">취소</button>
+          <button id="gb-modal-confirm" class="gb-btn-delete">삭제</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="guestbook.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
